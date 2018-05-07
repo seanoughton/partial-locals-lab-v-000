@@ -19,9 +19,9 @@ class Student < ActiveRecord::Base
     if student_name.empty?
       @return_value = Student.all
     else
-      binding.pry
-      student_name.capitalize
-      @return_value = Student.all
+      @return_value = Student.all.find_all do |student|
+        student.name.include?(student_name.capitalize)
+      end
     end
     @return_value
   end
