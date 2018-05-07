@@ -9,13 +9,13 @@ RSpec.describe "Student" do
         Student.create(name: name, hometown: Faker::Address.city, birthday: Faker::Date.between(25.years.ago, 18.years.ago))
       end
     end
-=begin
+
     context 'when it receives an empty search argument' do
       it 'returns all students' do
         expect(Student.search('').count).to eq(Student.all.count)
       end
     end
-=end
+
     context 'when it receives a search query' do
       it 'returns all students whose names contain the given string' do
         expect(Student.search('rob').map {|s| s.name}).to match_array(['Robert', 'Roberta'])
