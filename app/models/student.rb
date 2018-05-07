@@ -15,10 +15,15 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_name)
-    return = []
+    #'Bob', 'Robert', 'Roberta', 'Shirley', 'Shelby'
     if student_name.empty?
-      return = Student.all
+      @return_value = Student.all
+    else
+      binding.pry
+      student_name.capitalize
+      @return_value = Student.all
     end
+    @return_value
   end
 
 end
