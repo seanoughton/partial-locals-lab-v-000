@@ -12,8 +12,6 @@ Classroom Info
 <%end%>
 
 
-
-
 We now want to call out the oldest student in the class:
-<%@student = Student.new%>
+<%@student = @classroom.students[0]%>
 <%= render 'students/student' %>
