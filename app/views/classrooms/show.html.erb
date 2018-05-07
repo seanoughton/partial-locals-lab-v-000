@@ -5,8 +5,16 @@ Classroom Info
 </p>
 
 <h1>Students</h1>
-<%= render partial: "students/student", collection: @classroom.students %>
-
 <!--
+<%= render partial: "students/student", collection: @classroom.students %>
+-->
+
+<%@classroom.students.each do |student| %>
+  <%= render partial: "students/student", locals: {classroom_student:student}%>
+<%end%>
+
+
+
+
 We now want to call out the oldest student in the class:
-<%= render 'students/student' %> -->
+<%= render 'students/student' %>
