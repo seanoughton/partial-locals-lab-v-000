@@ -7,12 +7,5 @@ Classroom Info
 
 
 <%@classroom.students.each do |student| %>
-<%binding.pry%>
   <%= render partial: "students/student", locals: {student: student} %>
-
 <%end%>
-
-
-We now want to call out the oldest student in the class:
-<%@student = @classroom.students[0]%>
-<%= render 'students/student' %>
