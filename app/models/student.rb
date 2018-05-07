@@ -15,8 +15,10 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_name)
-    Student.all if student_name.empty?
-
+    return = []
+    if student_name.empty?
+      return = Student.all
+    end
   end
 
 end
